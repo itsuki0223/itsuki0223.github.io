@@ -23,8 +23,12 @@ for (i=0; i<about_array.length; i++){
 	httpobj.send();
 	$("#"+about_array[i]).text(httpobj.responseText);
 }
-if(dir == CreateSurveySite){
-	$("#"+about_array[i]).text('<a href="source/CreateSurveySite/create.html">デモサンプル</a>');
+if(dir == "CreateSurveySite"){
+	var demo = document.createElement("a");
+	demo.href = "source/CreateSurveySite/create.html";
+	demo.target = "_blank";
+	demo.innerHTML = "<br>デモサンプル";
+	document.getElementById("point").appendChild(demo);
 }
 
 httpobj.open('GET',"source/"+dir+"/files.txt",false);
