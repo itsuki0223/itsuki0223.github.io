@@ -23,6 +23,9 @@ for (i=0; i<about_array.length; i++){
 	httpobj.send();
 	$("#"+about_array[i]).text(httpobj.responseText);
 }
+if(dir == CreateSurveySite){
+	$("#"+about_array[i]).text('<a href="source/CreateSurveySite/create.html">デモサンプル</a>');
+}
 
 httpobj.open('GET',"source/"+dir+"/files.txt",false);
 httpobj.send();
